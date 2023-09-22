@@ -21,8 +21,26 @@ nav a {
     color: black;
     text-decoration: none;
 }
+
 main {
     padding: 20px;
+}
+
+h1 {
+    text-align: center;
+}
+
+input {
+    display: block;
+    margin: 5px 0;
+}
+th, td {
+    border: 1px solid black;
+    padding: 5px;
+}
+
+table {
+    border-collapse: collapse;
 }
 
 input, select {
@@ -36,10 +54,7 @@ input, select {
     color: red;
 }
 
-input {
-    display: block;
-    margin: 5px 0;
-}
+
 fieldset{
     max-width: 400px;
 }
