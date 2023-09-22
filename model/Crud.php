@@ -12,6 +12,16 @@ abstract class Crud extends PDO {
         return $stmt->fetchAll();
     }
 
+    public function selectInnerJoin($selectFields, $table, $joinTable, $joinCondition) {
+        $sql = "SELECT $selectFields
+        FROM $table
+        INNER JOIN $joinTable ON $joinCondition";
+
+        $stmt = $this->query($sql);
+        $results = $stmt->fetchAll();
+        return $results;
+    }
+
     public function selectId($value, $field ='id', $url = 'client-index') {
 
         $sql = "SELECT * FROM $this->table WHERE $this->primaryKey = :$this->primaryKey";

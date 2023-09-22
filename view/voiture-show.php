@@ -1,17 +1,19 @@
 {{ include('header.php', {title: 'Information'}) }}
 
     <main>
-        <p><strong>Année fabrication: </strong>{{voiture.annee}}</p>
-        <p><strong>Prix par jour: </strong>{{voiture.prix_par_jour}}</p>
-                    {% if voiture.disponible == 1 %}
-                        <p><strong>Disponibilité: </strong>Oui</p>
-                    {% else %}
-                        <p><strong>Disponibilité: </strong>Non</p>
-                    {% endif %}
+        <section>
+            <p><strong>Année fabrication: </strong>{{voiture.annee}}</p>
+            <p><strong>Prix par jour: </strong>{{voiture.prix_par_jour}}</p>
+                        {% if voiture.disponible == 1 %}
+                            <p><strong>Disponibilité: </strong>Oui</p>
+                        {% else %}
+                            <p><strong>Disponibilité: </strong>Non</p>
+                        {% endif %}
+            
+            <p><strong>Marque: </strong>{{nom}}</p>
+        </section>
         
-        <p><strong>Marque: </strong>{{nom}}</p>
-        
-        <a href="{{path}}voiture/edit/{{voiture.id}}">Mise à jour</a>
+        <div class="bouton"><a href="{{path}}voiture/edit/{{voiture.id}}">Mise à jour</a></div>
         </body>
     </main>
 </html>

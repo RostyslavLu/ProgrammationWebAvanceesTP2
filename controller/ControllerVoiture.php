@@ -3,14 +3,26 @@ RequirePage::model('Voiture'); //client
 RequirePage::model('Marque'); //ville
 class ControllerVoiture extends Controller{
 
-    public function index() {
-        
-        $voiture = new Voiture;
-        $select = $voiture->select();
-        
-        Twig::render('voiture-index.php', ['voitures'=>$select]);
+    //public function index() {
+    //    
+    //    $voiture = new Voiture;
+    //    $select = $voiture->select();
+    //    
+    //    Twig::render('voiture-index.php', ['voitures'=>$select]);
+//
+    //}
 
+    public function index() {
+        $selectFields = 'voitures.id, nom, annee, prix_par_jour, disponible';
+        $table = 'voitures';
+        $joinTable = 'marque';
+        $joinCondition = 'marque.id=marqueId';
+        $voiture=new Voiture;
+        $select = $voiture->selectInnerJoin($selectFields, $table, $joinTable, $joinCondition);
+
+        Twig::render('voiture-index.php', ['voitures'=>$select]);
     }
+
     public function create(){
         $marque = new Marque;
         $selectMarque = $marque->select();

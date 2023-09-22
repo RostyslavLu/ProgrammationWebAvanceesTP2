@@ -4,6 +4,7 @@
         <table>
             <tr>
                 <th>ID</th>
+                <th>Marque</th>
                 <th>Année</th>
                 <th>Prix par jour</th>
                 <th>Disponibilité</th>
@@ -12,7 +13,8 @@
             {% for voiture in voitures %}
     
                 <tr>
-                    <td><a href='{{path}}voiture/show/{{voiture.id}}'>{{ voiture.id }}</a></td>
+                    <td>{{ voiture.id }}</td>
+                    <td><a href='{{path}}voiture/show/{{voiture.id}}'>{{ voiture.nom }}</a></td>
                     <td>{{ voiture.annee }}</td>
                     <td>{{ voiture.prix_par_jour }}</td>
                     {% if voiture.disponible == 1 %}
