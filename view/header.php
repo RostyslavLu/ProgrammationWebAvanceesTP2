@@ -11,4 +11,6 @@
         <a href="{{ path }}">Accueil</a>
         <a href="{{ path }}voiture">Liste des voitures</a>
         <a href="{{ path }}voiture/create">Ajouter une voiture</a>
+        <a href="{{ path }}client">Liste des clients</a>
+        <a href="{{ path }}client/create">Ajouter un client</a>
     </nav>

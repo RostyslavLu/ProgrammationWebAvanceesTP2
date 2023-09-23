@@ -38,7 +38,7 @@ abstract class Crud extends PDO {
 
     }
     public function insert($data) {
-        
+        var_dump($data);
         $data_keys = array_fill_keys($this->fillable, '');
         
         $data = array_intersect_key($data, $data_keys);
@@ -47,7 +47,7 @@ abstract class Crud extends PDO {
         $fieldValue = ":".implode(', :', array_keys($data));
         
         $sql = "INSERT INTO $this->table ($fieldName) VALUES ($fieldValue)";
-       
+        var_dump($sql);
         $stmt = $this->prepare($sql);
         
         foreach($data as $key =>$value){

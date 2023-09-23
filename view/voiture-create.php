@@ -3,10 +3,10 @@
         <form action="{{path}}voiture/store" method="post">
             <fieldset>
                 <label>Année fabrication:
-                    <input type="text" name="annee">
+                    <input type="number" name="annee">
                 </label>
                 <label >Prix par jour:
-                    <input type="text" name="prix_par_jour">
+                    <input type="number" name="prix_par_jour">
                 </label>
                 <label >Disponibilité:
                     <select name="disponible" >
