@@ -11,15 +11,20 @@ nav {
     display: flex;
     flex-direction: row;
     gap: 20px;
-    justify-content: end;
+    justify-content: start;
     align-items: center;
     padding: 20px;
 }
 nav a {
+    display: block;
     background-color: azure;
     padding: 10px;
     color: black;
     text-decoration: none;
+}
+
+nav a:hover {
+    color: red;
 }
 
 main {
@@ -81,4 +86,34 @@ input, select {
 
 fieldset{
     max-width: 400px;
+}
+
+/* menu derulant */
+.menu-deroulant {
+    position: relative; /* permet les enfants en position absolue */
+}
+
+.menu-deroulant:hover {
+    background-color: lightgrey;
+}
+
+/* conteneur déroulant */
+.menu-deroulant > div {
+    position: absolute; /* évite d'agrandir la navigation */
+    top: 100%; /* assure le positionnement en-dessous du lien */
+    width: max-content; /* permet d'aller au-delà des dimensions du lien */
+    max-width: 20ch; /* limite les mots trop longs */
+    background-color: lightgrey; /* l'arrière-plan opaque est nécessaire à cause du chevauchement */
+}
+
+/* -- comportement d'affichage */
+.menu-deroulant:not(:hover) > div {
+    pointer-events: none;
+    opacity: 0;
+}
+
+/* -- variante alignée à droite */
+.menu-deroulant.cote-droit div {
+    left: auto;
+    right: 0;
 }

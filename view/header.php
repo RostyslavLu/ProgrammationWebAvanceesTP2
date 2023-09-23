@@ -9,8 +9,18 @@
 <body>
     <nav>
         <a href="{{ path }}">Accueil</a>
-        <a href="{{ path }}voiture">Liste des voitures</a>
-        <a href="{{ path }}voiture/create">Ajouter une voiture</a>
-        <a href="{{ path }}client">Liste des clients</a>
-        <a href="{{ path }}client/create">Ajouter un client</a>
+        <div class="menu-deroulant">
+            <a href="">Voiture</a>
+            <div>
+                <a href="{{ path }}voiture">Liste des voitures</a>
+                <a href="{{ path }}voiture/create">Ajouter une voiture</a>
+            </div>
+        </div>
+        <div class="menu-deroulant">
+            <a href="">Client</a>
+            <div>
+                <a href="{{ path }}client">Liste des clients</a>
+                <a href="{{ path }}client/create">Ajouter un client</a>
+            </div>
+        </div>
     </nav>
